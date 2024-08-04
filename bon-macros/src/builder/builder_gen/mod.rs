@@ -398,7 +398,7 @@ impl BuilderGenCtx {
         let member_ident = &member.ident;
 
         let expr = quote! {
-            ::bon::private::IntoSet::into_set(self.__private_impl.#member_ident)
+            bon::private::IntoSet::into_set(self.__private_impl.#member_ident)
                 .into_inner()
                 #maybe_default
         };
@@ -435,7 +435,7 @@ impl BuilderGenCtx {
             let set_state_type_param = member.set_state_type_param();
             quote! {
                 __State::#member_assoc_type_ident:
-                    ::bon::private::IntoSet<#set_state_type_param>
+                    bon::private::IntoSet<#set_state_type_param>
             }
         });
 
